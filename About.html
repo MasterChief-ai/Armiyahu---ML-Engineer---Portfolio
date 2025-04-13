@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armiyahu - ML Engineer</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+        /* Base Styling */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            font-family: "Sora", sans-serif;
+            margin-right: 40px;
+            text-align: center;
+            border-top: 4px;
+            border-radius: 5px;
+            border: 10px solid transparent;
+        }
+
+        a:hover {
+            color: white;
+            background-color: black;
+            transition: all 0.4s ease-in-out;
+            border: 10px solid black;
+        }
+
+        button {
+            border: none transparent;
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgba(255, 253, 203);
+            font-style: normal;
+            padding: 0;
+            font-family: "Sora", sans-serif;
+            font-optical-sizing: auto;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            position: relative;
+            opacity: 0;
+            animation: slideIn 0.4s ease-in-out forwards 0.4s;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards 0.5s;
+        }
+
+        .avatar:hover {
+            background-color: black;
+            transition: all 1s ease-in-out;
+        }
+
+        .links {
+            display: block;
+            margin-top: 30px;
+        }
+
+        .logo-image {
+            margin-top: 30px;
+            margin-left: 60px;
+            width: 400px;
+            height: 250px;
+        }
+
+        span {
+            margin-left: -15px;
+            margin-right: 5px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            align-self: center;
+            gap: 10px;
+            padding-top: 100px;
+            opacity: 0;
+            justify-content: center;
+            transform: translateY(50px);
+            animation: revealContainer 0.5s ease-in-out forwards 0.5s;
+        }
+
+        @keyframes revealContainer {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grid-row {
+            display: grid;
+            justify-content: center;
+        }
+
+        .grid-row1 {
+            display: grid;
+            justify-content: center;
+            width: 1800px;
+            margin-right: -30px;
+            margin-left: 30px;
+            align-self: end;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            word-spacing: 4px;
+        }
+
+        h3 {
+            font-weight: 400;
+            text-align: center;
+            word-spacing: 6px;
+            line-height: 33px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 1024px) {
+            .logo-image {
+                width: 250px;
+                height: auto;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                text-align: center;
+            }
+
+            .links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .links a {
+                margin: 5px 15px;
+            }
+
+            .avatar {
+                width: 220px;
+                height: 220px;
+            }
+
+            .grid-row1 {
+                width: 90%;
+                margin: 0 auto 30px auto;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 16px;
+                line-height: 28px;
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo-image {
+                width: 200px;
+            }
+
+            .avatar {
+                width: 180px;
+                height: 180px;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .links a {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .span{
+                transform: rotate(90deg);
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img class="logo-image" src="logo.png" alt="">
+        </div>
+        <div class="links">
+            <a href="Home.html">Home</a>
+            <span class="span">|</span>
+            <a href="About.html">About</a>
+            <span class="span">|</span>
+            <a href="Projects.html">Projects</a>
+            <span class="span">|</span>
+            <a href="Contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid-row">
+            <img class="avatar" src="Avatar.png" alt="">
+        </div>
+        <hr>
+        <div class="grid-row1">
+            <h1>Hi, I am Armiyahu , nice to meet you </h1>
+            <h3>
+                I’m a Machine Learning Engineer who enjoys turning raw data into real-world solutions.
+
+                What drew me in? The idea that machines can learn, adapt, and even predict the future. That still amazes me. I’ve worked on everything from predictive models to NLP projects, and I’ve realized it’s not about fancy algorithms — it’s about solving actual problems.
+
+                My approach is simple: listen first, then build. I try to understand the “why” before jumping into code. Once the problem’s clear, I pick the right tools and focus on building something that works — not just in theory, but in practice.
+
+                I also believe collaboration is where the best ideas come from. Quick feedback, honest conversations, and being open to change go a long way. I don’t just deliver solutions — I co-create them.
+
+                Right now, I’m a founding member at Sparktrobyte, building future-focused tools from scratch. Outside work, I’m usually tinkering with new ideas or digging into the latest AI research.
+
+                If you’re into practical, grounded machine learning — let’s connect.
+            </h3>
+        </div>
+        <div class="grid-row1">
+            <h1>Skills</h1>
+            <h3 class="reveal">
+                I work mainly with Python to build and deploy intelligent systems. I’ve used frameworks like TensorFlow for model development, Flask for serving models via APIs, and React.js to create interactive front-end experiences.
+
+                On the ML side, I’ve worked with libraries like OpenCV, dlib, and face_recognition for computer vision tasks, and spaCy for NLP. I’m comfortable handling data with NumPy and managing code with Git, whether I’m solo or collaborating with a team.
+
+                From building models to getting them into production, I focus on practical, end-to-end solutions that actually work in real environments.
+            </h3>
+        </div>
+    </div>
+</body>
+</html>
